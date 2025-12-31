@@ -1,0 +1,178 @@
+/* --- Base Styles (Consistent with your theme) --- */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+nav{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    gap:7%;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    padding: 1% 0;
+}
+
+nav a{
+    font-size: 1.5rem;
+    color: rgb(83, 215, 1);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav a:hover{
+    background-color: rgb(83, 215, 1);
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.cart-container {
+    padding-top: 120px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 80vh;
+}
+
+#text {
+    font-size: 2.5rem;
+    color: rgb(83, 215, 1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #9be15d;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(155, 225, 93, 0.2);
+}
+
+.cart-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    text-align: right;
+    padding: 20px;
+    border-top: 3px solid #9be15d;
+}
+
+.cart-summary h3 {
+    font-size: 1.8rem;
+    color: #4caf50;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #9be15d, #4caf50);
+    color: white;
+}
+
+.btn-secondary {
+    background: #ff5e5e;
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+footer{
+    margin-top: 50px;
+    background-color: white;
+    height: 100px;
+    padding-top: 25px;
+}
+footer h3{
+    text-align: center;
+    color: rgb(87, 198, 2);
+    font-size: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+
+    .cart-container {
+        padding-top: 150px; 
+    }
+
+    #text {
+        font-size: 1.8rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .cart-summary {
+        text-align: center;
+    }
+
+    .cart-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+}
+
+/*one style for nav bar among all pages*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+}
+

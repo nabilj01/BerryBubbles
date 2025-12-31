@@ -1,0 +1,162 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    background: url(./mainImages/strawberries-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    gap:7%;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    padding: 1% 0;
+}
+
+nav a{
+    font-size: 1.5rem;
+    color: rgb(83, 215, 1);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav a:hover{
+    background-color: rgb(83, 215, 1);
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+}
+
+main {
+    padding-top: 120px;
+}
+
+#text {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(155, 225, 93, 0.15);
+    border: 1px solid rgba(155, 225, 93, 0.3);
+    gap: 40px;
+}
+
+.info img {
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.info img:hover {
+    transform: scale(1.03);
+}
+
+.info p {
+    font-size: 1.2rem;
+    color: rgb(83, 215, 1);
+    flex: 1;
+}
+
+footer{
+    margin-top: 50px;
+    background-color: white;
+    height: 100px;
+    padding-top: 25px;
+}
+footer h3{
+    text-align: center;
+    color: rgb(87, 198, 2);
+    font-size: 0.5rem;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .info {
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .info img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .info p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #text {
+        font-size: 2.2rem;
+    }
+
+    .info {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .info:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    .info img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .info p {
+        font-size: 1rem;
+    }
+}
+
+/*one style for nav bar among all pages*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+}

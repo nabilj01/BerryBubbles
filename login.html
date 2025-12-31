@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berry Bubbles | Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+    <a href="about.html">About</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<div class="login-container">
+    <div class="login-card">
+        <h1>Login to Berry Bubbles</h1>
+        <p class="tagline">Fresh & Organic Fruits</p>
+
+        <form onsubmit="login(event)">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" required placeholder="you@example.com">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+
+            <button type="submit">Login</button>
+
+            <p class="signup">
+                Don’t have an account?
+                <a href="signup.html">Sign up</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <h3>Nabatiye-Mayfadoun main street</h3>
+    <h3>+961 81 349 206</h3>
+    <h3>2025-All copy rights reserved</h3>
+</footer>
+
+<script>
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    if (!users) {
+        users = [
+            { email: "nabiljaber@gmail.com", password: "2007" }
+        ];
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    function login(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
+
+        const found = users.find(
+            user => user.email === email && user.password === password
+        );
+
+        if (found) {
+            alert("Login successful");
+        } else {
+            alert("Wrong credentials");
+        }
+    }
+</script>
+
+</body>
+</html>
+

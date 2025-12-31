@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berry Bubbles | Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+    <a href="about.html">About</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<div class="login-container">
+    <div class="login-card">
+        <h1>Sign Up</h1>
+        <p class="tagline">Join Berry Bubbles</p>
+
+        <form onsubmit="signup(event)">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="signupEmail" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="signupPassword" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" id="signupConfirmPassword" required>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+            <p class="signup">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <h3>Nabatiye-Mayfadoun main street</h3>
+    <h3>+961 81 349 206</h3>
+    <h3>2025-All copy rights reserved</h3>
+</footer>
+
+<script>
+    let users = JSON.parse(localStorage.getItem("users"));
+
+    if (!users) {
+        users = [
+            { email: "nabiljaber@gmail.com", password: "2007" }
+        ];
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    function signup(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value.trim();
+        const confirmPassword = document.getElementById("signupConfirmPassword").value.trim();
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+
+        const exists = users.some(user => user.email === email);
+        if (exists) {
+            alert("Email already exists");
+            return;
+        }
+
+        users.push({ email, password });
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Account created successfully");
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>
+
